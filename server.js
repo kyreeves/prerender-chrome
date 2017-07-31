@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 var prerender = require('./lib');
 
-var server = prerender();
+var server = prerender({
+  chromeLocation: '/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+});
 
 server.use(prerender.sendPrerenderHeader());
 server.use(prerender.blockResources());
